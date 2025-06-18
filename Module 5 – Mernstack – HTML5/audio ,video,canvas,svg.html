@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML5 Media and Shapes</title>
+  </head>
+  <body>
+    <h2>Audio</h2>
+    <audio controls muted loop autoplay>
+      <source src="audio.mp3" type="audio/mpeg" />
+      Your browser does not support the audio tag.
+    </audio>
+
+    <h2>Video</h2>
+    <video width="320" height="240" controls muted loop autoplay>
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <h2>Shapes using &lt;canvas&gt;</h2>
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="200"
+      style="border: 1px solid #000"
+    ></canvas>
+
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Draw a filled rectangle
+      ctx.fillStyle = "#FF0000";
+      ctx.fillRect(20, 20, 100, 50);
+
+      // Draw a circle
+      ctx.beginPath();
+      ctx.arc(200, 75, 40, 0, 2 * Math.PI);
+      ctx.fillStyle = "#00AAFF";
+      ctx.fill();
+
+      // Draw a triangle
+      ctx.beginPath();
+      ctx.moveTo(300, 150);
+      ctx.lineTo(250, 50);
+      ctx.lineTo(350, 50);
+      ctx.closePath();
+      ctx.fillStyle = "#00FF00";
+      ctx.fill();
+    </script>
+
+    <h2>🖼️ Shapes using &lt;svg&gt;</h2>
+    <svg width="400" height="200" style="border: 1px solid #000">
+      <!-- Rectangle -->
+      <rect x="20" y="20" width="100" height="50" fill="orange" />
+
+      <!-- Circle -->
+      <circle cx="200" cy="50" r="40" fill="blue" />
+
+      <!-- Triangle -->
+      <polygon points="300,150 250,50 350,50" fill="green" />
+    </svg>
+  </body>
+</html>
